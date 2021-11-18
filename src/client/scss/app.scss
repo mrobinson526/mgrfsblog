@@ -21,4 +21,12 @@ $theme-colors: (
 	// add any additional color below
 );
 
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.fa-trash:hover {
+	cursor: pointer;
+}
+
+button[type="submit"] {
+	float: right;
+}

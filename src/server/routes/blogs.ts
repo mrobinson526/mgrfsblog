@@ -43,10 +43,11 @@ router.delete("/:blogid", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
     try {
         const authorid = req.body.authorid;
+        const name = req.body.name;
         const title = req.body.title;
         const content = req.body.content;
 
-        const dbRes = await db.blogs.insert(authorid, title, content);
+        const dbRes = await db.blogs.insert(authorid, name, title, content);
 
         res.send(dbRes);
     } catch (error) {
@@ -58,6 +59,7 @@ router.post("/", async (req, res, next) => {
 router.put("/:blogid", async (req, res, next) => {
     try {
         const blogid = req.params.blogid;
+        const title = req.body.title;
         const content = req.body.content;
 
         const dbRes = await db.blogs.edit(title, content, blogid);
