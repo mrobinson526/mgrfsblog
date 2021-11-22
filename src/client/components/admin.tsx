@@ -11,12 +11,12 @@ const Admin = (props: IAdminProps) => {
     });
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const { blogid } = useParams<{ blogid: string }>();
+    const { id } = useParams<{ id: string }>();
     const history = useHistory();
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`/api/blogs/${blogid}`);
+            const res = await fetch(`/api/blogs/${id}`);
             const blog = await res.json();
             setBlog(blog);
             setTitle(blog.title);
@@ -35,8 +35,8 @@ const Admin = (props: IAdminProps) => {
         history.push("/");
     }
 
-    const handleUpdateBlog = async (blogid: string, title: string, content: string) => {
-        await fetch(`/api/blogs/${blogid}`, {
+    const handleUpdateBlog = async (id: string, title: string, content: string) => {
+        await fetch(`/api/blogs/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

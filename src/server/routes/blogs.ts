@@ -42,11 +42,11 @@ router.delete("/:blogid", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
     try {
-        const authorid = req.body.authorid;
+        const blogid = req.body.blogid;
         const content = req.body.content;
         const title = req.body.title;
 
-        const dbRes = await db.blogs.insert(null, title, content, authorid);
+        const dbRes = await db.blogs.insert(title, content, blogid);
 
         res.send(dbRes);
     } catch (error) {
