@@ -43,11 +43,10 @@ router.delete("/:blogid", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
     try {
         const authorid = req.body.authorid;
-        const name = req.body.name;
-        const title = req.body.title;
         const content = req.body.content;
+        const title = req.body.title;
 
-        const dbRes = await db.blogs.insert(authorid, name, title, content);
+        const dbRes = await db.blogs.insert(null, title, content, authorid);
 
         res.send(dbRes);
     } catch (error) {
@@ -72,4 +71,3 @@ router.put("/:blogid", async (req, res, next) => {
 });
 
 export default router;
-

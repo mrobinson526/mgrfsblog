@@ -7,7 +7,7 @@ import Admin from "./components/Admin";
 const App = (props: AppProps) => {
 	return (
 		<div className="container">
-			<h1>Blogs</h1>
+			<h1>Full Stack Blog Application</h1>
 			<BrowserRouter>
 				<Switch>
 					<Route path={"/admin/:blogid"} component={Admin} />
