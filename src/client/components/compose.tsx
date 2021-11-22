@@ -37,7 +37,7 @@ const Compose: React.FC = () => {
                     className="form-control"
                     id="name-input"
                     aria-describedby="nameHelp"
-                    placeholder="Enter your handle"
+                    placeholder="Enter your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />

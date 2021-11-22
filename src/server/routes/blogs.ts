@@ -46,7 +46,7 @@ router.post("/", async (req, res, next) => {
         const content = req.body.content;
         const title = req.body.title;
 
-        const dbRes = await db.blogs.insert(title, content, blogid);
+        const dbRes = await db.blogs.insert(title, content);
 
         res.send(dbRes);
     } catch (error) {
